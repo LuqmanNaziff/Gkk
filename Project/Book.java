@@ -21,7 +21,8 @@ public class Book {
 
 
     public boolean isAvailable() {
-        return isAvailable;
+        //return isAvailable;
+        return true;
     }
 
 

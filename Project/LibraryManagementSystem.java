@@ -6,7 +6,7 @@ public class LibraryManagementSystem {
     Library library = new Library();
     
     library.addBook(new Book("Harry Potter", "J.K. Rowling", "12345", true));
-    library.addBook(new Book("Lord of the Rings",  "J.R.R. Tolkien", "67890", false));
+    library.addBook(new Book("Lord of the Rings",  "J.R.R. Tolkien", "67890", true));
     
     library.listAvailableBooks();
 

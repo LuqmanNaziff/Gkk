@@ -28,8 +28,9 @@ public class Library {
 
     public void listAvailableBooks() {
         System.out.println("--- Available Books ---");
-
+        
         for (Book book : books) {
+            //if (book.isAvailable()) {
             if (book.isAvailable()) {
                 book.printBookInfo();
             }
