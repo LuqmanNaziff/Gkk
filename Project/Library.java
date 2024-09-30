@@ -1,11 +1,10 @@
 
 import java.util.ArrayList;
-
+import java.util.Random;
 public class Library {
 
     private ArrayList<Book> books;
     private ArrayList<User> users;
-
 
 
     public Library() {
@@ -54,12 +53,14 @@ public class Library {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 if (!book.isAvailable()) {
                     throw new BookAlreadyBorrowedException("The book '" + title + "' is already borrowed.");
-                }
+                    
+                }else{
 
                 book.setAvailable(false);
                 user.borrowBook(title);
                 System.out.println("You have successfully borrowed: " + title);
                 return;
+                }
             }
         }
 

@@ -11,9 +11,8 @@ public class Book {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
-        this.isAvailable = isAvailable;
+        this.isAvailable = isAvailable();
     }
-
 
 
     public String getTitle() {
@@ -21,11 +20,9 @@ public class Book {
     }
 
 
-
     public boolean isAvailable() {
         return isAvailable;
     }
-
 
 
     public void setAvailable(boolean isAvailable) {
@@ -33,8 +30,7 @@ public class Book {
     }
 
 
-
     public void printBookInfo() {
-        System.out.print("Tittle: " + title + "/n" + "Author: " + autho + "/n" + "ISBN: " + isbn + "Availability: " + isAvailable);
+        System.out.print("Tittle: " + title + "\n" + "Author: " + author + "\n" + "ISBN: " + isbn + "\n" +"Availability: " + isAvailable + "\n" + "\n");
     }
 }

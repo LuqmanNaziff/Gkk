@@ -7,31 +7,52 @@ public class LibraryManagementSystem {
     
     library.addBook(new Book("Harry Potter", "J.K. Rowling", "12345", true));
     library.addBook(new Book("Lord of the Rings",  "J.R.R. Tolkien", "67890", false));
-
-    User user1 = new User("Alice", 30);
-    User user2 = new User("Bob", 25);
-
-    library.addUser(user1);
-    library.addUser(user2);
-
-
+    
     library.listAvailableBooks();
 
-     try {
-         library.borrowBook(user1, "Harry Potter");
-         library.borrowBook(user2, "Lord of the Rings");
-         // Attempt to borrow the same book again
-         library.borrowBook(user1, "Harry Potter"); // This should throw an exception
+    System.out.print("Enter the name of User 1: ");
+    String name1 = scanner.nextLine();
+    System.out.print("Enter the age of User 1: ");
+    int age1 = scanner.nextInt();
+    scanner.nextLine();  
+
+        User user1 = new User(name1, age1);
+        library.addUser(user1);
+
+    System.out.print("Enter the name of User 2: ");
+    String name2 = scanner.nextLine();
+    System.out.print("Enter the age of User 2: ");
+    int age2 = scanner.nextInt();
+    scanner.nextLine(); 
+
+        User user2 = new User(name2, age2);
+        library.addUser(user2);
+
+
+    try {
+        System.out.print("Enter the title of the book User 1 wants to borrow: ");
+        String title1 = scanner.nextLine();
+        library.borrowBook(user1, title1);
+
+        System.out.print("Enter the title of the book User 2 wants to borrow: ");
+        String title2 = scanner.nextLine();
+        library.borrowBook(user2, title2);
     } catch (BookAlreadyBorrowedException e) {
         System.out.println(e.getMessage());
-     }
-
-     library.getBorrowedBooksForAllUsers();
-
-
-     user1.checkDueDates();
-     user1.checkOverdueBooks();
     }
+
+    // Show borrowed books for users
+    library.getBorrowedBooksForAllUsers();
+
+    // Checking due dates and overdue books
+    user1.checkDueDates();
+    user1.checkOverdueBooks();
+    user2.checkDueDates();
+    user2.checkOverdueBooks();
+
+    // Close the scanner
+    scanner.close();
+}
 }
 
     
